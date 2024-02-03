@@ -5,6 +5,7 @@ import { Button } from './Button';
 import { Loader } from './Loader';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { searchImage } from '../api/image';
+import css from './styles.module.css';
 
 export const App = () => {
   const [search, setSearch] = useState('');
@@ -76,6 +77,7 @@ export const App = () => {
           <img src={modalImage} alt="" />
         </Modal>
       )}
+      {error && <p className={css.error}>{error}</p>}
     </>
   );
 };
