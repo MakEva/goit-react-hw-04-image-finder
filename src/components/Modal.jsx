@@ -15,8 +15,8 @@ export const Modal = ({ close, children }) => {
   useEffect(() => {
     document.addEventListener('keydown', closeModal);
 
-    return () => document.addEventListener('keydown', closeModal);
-  }, []);
+    return () => document.removeEventListener('keydown', closeModal);
+  }, [close]);
 
   return createPortal(
     <div className={css.overlay} onClick={closeModal}>
